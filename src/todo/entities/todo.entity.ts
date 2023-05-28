@@ -11,7 +11,7 @@ export class Todo {
     title: string;
 
     @Column()
-    state: string;
+    state: 'todo' | 'doing' | 'done';
 
     @ManyToOne(() => User, (user) => user.todos)
     @JoinColumn({name: 'user_id'})
